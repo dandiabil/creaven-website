@@ -1,0 +1,42 @@
+.header-container {
+  height: 110px;
+  background-color: #8bd1f9;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .logo-wrapper {
+    flex: 4;
+    margin-left: 50px;
+
+    .logo {
+      font-size: 36px;
+      text-decoration: none;
+    }
+  }
+
+  .nav-links {
+    flex: 2;
+
+    .nav-item {
+      text-decoration: none;
+      color: black;
+      margin-right: 30px;
+      justify-content: space-evenly;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex: 1;
+
+    .btn {
+      margin-right: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
