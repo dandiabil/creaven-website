@@ -1,19 +1,25 @@
 import { Card } from "primereact/card";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfilePage.scss";
 import { Avatar } from "primereact/avatar";
 import { Divider } from "primereact/divider";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+import { useDispatch } from "react-redux";
+import { getProfile } from "../../Redux/User/fetch-action";
 
 const ProfilePage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, [dispatch]);
   const [editable, setEditable] = useState(false);
 
   const handleEdit = () => {
     setEditable(!editable);
   };
 
-  console.log(editable);
   return (
     <Card
       className="container-profile"

@@ -6,7 +6,8 @@
   align-items: center;
 
   .logo-wrapper {
-    flex: 4;
+    flex: 0;
+    cursor: pointer;
     margin-left: 50px;
 
     .logo {
@@ -33,10 +34,29 @@
     display: flex;
     flex: 1;
 
+    .profile-btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #0d89ec;
+      padding: 8px 12px;
+      border-radius: 12px;
+
+      p {
+        padding-right: 15px;
+        color: white;
+      }
+    }
+
     .btn {
       margin-right: 10px;
       cursor: pointer;
       text-decoration: none;
     }
+  }
+
+  .spacing {
+    flex: 3;
   }
 }
