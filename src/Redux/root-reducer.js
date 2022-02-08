@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { UserReducer } from "./User/reducer";
+import { DataReducer } from "./Data/reducer";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -11,8 +12,9 @@ const persistConfig = {
 };
 
 // Group of Reducer
-const reducers = combineReducers({
+const appReducers = combineReducers({
   user: UserReducer,
+  data: DataReducer,
 });
 
-export default persistReducer(persistConfig, reducers);
+export default persistReducer(persistConfig, appReducers);

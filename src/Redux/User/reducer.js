@@ -1,9 +1,15 @@
-import { REQUEST_USER, FAILED_REQUEST, POST_USER, GET_USER } from "./action";
+import {
+  REQUEST_USER,
+  FAILED_REQUEST,
+  GET_USER,
+  CONSULT_RESULT,
+} from "./action";
 
 // initial state
 export const USER_STATE = {
   loading: false,
-  users: [],
+  profile: [],
+  results: [],
   method: "",
   status: "",
 };
@@ -18,20 +24,19 @@ export const UserReducer = (state = USER_STATE, action) => {
         status: "ONGOING",
       };
     case GET_USER:
-      console.log(action.payload);
       return {
         ...state,
         loading: false,
         method: "GET",
-        users: action.payload.user,
+        profile: action.payload,
         status: "SUCCESS",
       };
-    case POST_USER:
+    case CONSULT_RESULT:
       return {
         ...state,
         loading: false,
-        method: "POST",
-        users: action.payload.user,
+        method: "GET",
+        results: action.payload,
         status: "SUCCESS",
       };
     case FAILED_REQUEST:
